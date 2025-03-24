@@ -78,6 +78,8 @@ class Maze():
         self._win = win
         self._cells = []
 
+        self._solution_path = []
+
         if seed is not None:
             random.seed(seed)
 
@@ -176,8 +178,8 @@ class Maze():
     
     def _solve_r(self, i, j):
         self._animate()
-
         self._cells[i][j].visited = True
+        
         if i == self._num_cols - 1 and j == self._num_rows - 1:
             return True
 
